@@ -72,12 +72,12 @@
         </section>
     </template>
     <script>
-        function getContent(id) {
+        function getTemplateContent(id) {
             var content = document.getElementById(id);
             return document.importNode(content, true).content;
         }
         
-        function appendChildren(view, content) {
+        function loadContentToView(view, content) {
             view.innerHTML = '';
             view.appendChild(content);
         }
@@ -99,7 +99,7 @@
                 tpl = '404.tpl';
                 break;
             }
-            appendChildren(view, getContent(tpl));
+            loadContentToView(view, getTemplateContent(tpl));
         }
         
         function loadView() {
