@@ -71,8 +71,45 @@
             </div>
         </section>
     </template>
-
-    <script src="bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="scripts/main.js"></script>
+    <script>
+        function getContent(id) {
+            var content = document.getElementById(id);
+            return document.importNode(content, true).content;
+        }
+        
+        function appendChildren(view, content) {
+            view.innerHTML = '';
+            view.appendChild(content);
+        }
+        
+        function navigate(route, view) {
+            let tpl;
+            switch (route) {
+            case '':
+            case '/':
+                tpl = 'home.tpl';
+                break;
+            case '/about':
+                tpl = 'about.tpl';
+                break;
+            case '/contact':
+                tpl = 'contact.tpl';
+                break;
+            default:
+                tpl = '404.tpl';
+                break;
+            }
+            appendChildren(view, getContent(tpl));
+        }
+        
+        function loadView() {
+            var route = window.location.hash.substr(1);
+            var container = document.querySelector('#root');
+            navigate(route, container);
+        }
+        
+        window.addEventListener('load', loadView);
+        window.addEventListener('hashchange', loadView);
+    </script>
 </body>
 </html>
