@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hash Based Routing (SPA)</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <ul class="nav navbar-nav">
+                <li><a href="#/">Home</a></li>
+                <li><a href="#/contact">Contact</a></li>
+                <li><a href="#/about">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div id="root" class="container"></div>
+        <div class="text-muted text-center" style="margin-top: 4em">xerosoft.net &copy;2018</div>
+    </main>
+
+    <template id="home.tpl">
+        <section>
+            <div class="jumbotron text-center">
+                <h1>SPA with JQuery</h1>
+                <p>This demonstrates the use of jquery to simulate page routing.</p>
+            </div>
+            <section>
+                <h2>Introduction</h2>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae facere exercitationem veniam, aliquid aliquam atque quos quisquam corporis ipsa itaque fugit debitis ipsum recusandae minima quasi. Pariatur repudiandae asperiores id?</p>
+
+                <h2>Why Use JQuery</h2>
+                <p>Assumenda nesciunt corrupti vitae, optio necessitatibus quo sint error molestias veniam commodi? Corrupti quam, voluptatibus, praesentium, asperiores autem dolores iste alias aspernatur laboriosam suscipit non rerum tenetur voluptas provident nobis.
+                    <ul>
+                        <li>Quasi quam delectus reiciendis ea minima excepturi soluta corporis?</li>
+                        <li>Id pariatur odit vel dolorum aliquam modi illo soluta?</li>
+                        <li>Accusamus nisi ad adipisci cumque pariatur, id incidunt est!</li>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error.</li>
+                    </ul>
+                </p>
+
+                <h2>Summary</h2>
+                <p>Nisi non omnis fuga? Expedita distinctio aliquid temporibus explicabo nam molestias vero deleniti nulla, adipisci libero quaerat inventore tenetur voluptatem corrupti totam accusantium quo aperiam quis odio labore illum optio?</p>
+            </section>
+        </section>
+    </template>
+
+    <template id="about.tpl">
+        <h1>This is about page</h1>
+    </template>
+
+    <template id="contact.tpl">
+        <section class="row">
+            <div class="col-md-8">
+                <h2>Like what we do? Send us a feedback</h2>
+                <form>
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="Email e.g johndoe@email.com">
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" placeholder="Content..." rows="10"></textarea>
+                    </div>
+                    <div class="form-group pull-right">
+                        <button class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </template>
+
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="scripts/main.js"></script>
+</body>
+</html>
